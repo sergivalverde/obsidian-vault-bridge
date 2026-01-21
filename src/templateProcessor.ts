@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class TemplateProcessor {
     async processTemplate(templatePath: string, context: Record<string, any>): Promise<string> {
