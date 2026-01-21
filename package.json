@@ -131,7 +131,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "file:///Users/tensor/dev/obsidian-vault-bridge"
+    "url": "https://github.com/sergivalverde/obsidian-vault-bridge.git"
   },
-  "publisher": "tensor"
+  "publisher": "sergivalverde",
+  "bugs": {
+    "url": "https://github.com/sergivalverde/obsidian-vault-bridge/issues"
+  },
+  "homepage": "https://github.com/sergivalverde/obsidian-vault-bridge#readme"
 }
