@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "obsidianVault.vaultPath": "~/Documents/SV",
+    "obsidianVault.dailyNotesFolder": "attention",
+    "obsidianVault.weeklyNotesFolder": "",
+    "obsidianVault.dailyNoteTemplate": "_templates/daily_note_template.md.md",
+    "obsidianVault.weeklyNoteTemplate": "_templates/Weekly template.md",
+    "obsidianVault.templatesFolder": "_templates",
+    "obsidianVault.autoCreateYearFolders": true,
+    "files.exclude": {
+      "**/.obsidian": true
+    }
+  }
+}
