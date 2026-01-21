@@ -1,0 +1,132 @@
+{
+  "name": "obsidian-vault-bridge",
+  "displayName": "Obsidian Vault Bridge",
+  "description": "Access your Obsidian vault from VS Code with daily notes, weekly notes, wikilinks, and templates",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "obsidianVault.openTodayNote",
+        "title": "Open Today's Note",
+        "category": "Obsidian"
+      },
+      {
+        "command": "obsidianVault.openWeeklyNote",
+        "title": "Open This Week's Note",
+        "category": "Obsidian"
+      },
+      {
+        "command": "obsidianVault.createNoteFromTemplate",
+        "title": "Create Note from Template",
+        "category": "Obsidian"
+      },
+      {
+        "command": "obsidianVault.navigateToDate",
+        "title": "Navigate to Date",
+        "category": "Obsidian"
+      },
+      {
+        "command": "obsidianVault.refreshVaultExplorer",
+        "title": "Refresh Vault Explorer",
+        "category": "Obsidian",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "obsidian-vault-explorer",
+          "title": "Obsidian Vault",
+          "icon": "resources/vault-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "obsidian-vault-explorer": [
+        {
+          "id": "obsidianVaultTreeView",
+          "name": "Vault Explorer",
+          "contextualTitle": "Obsidian Vault"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "obsidianVault.refreshVaultExplorer",
+          "when": "view == obsidianVaultTreeView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Obsidian Vault Bridge",
+      "properties": {
+        "obsidianVault.vaultPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to your Obsidian vault (e.g., ~/Documents/SV). Leave empty to use workspace folder."
+        },
+        "obsidianVault.dailyNotesFolder": {
+          "type": "string",
+          "default": "",
+          "description": "Folder for daily notes relative to vault root. Falls back to Obsidian settings if empty."
+        },
+        "obsidianVault.weeklyNotesFolder": {
+          "type": "string",
+          "default": "",
+          "description": "Folder for weekly notes relative to vault root. Falls back to Obsidian settings if empty."
+        },
+        "obsidianVault.dailyNoteTemplate": {
+          "type": "string",
+          "default": "",
+          "description": "Path to daily note template relative to vault root. Falls back to Obsidian settings if empty."
+        },
+        "obsidianVault.weeklyNoteTemplate": {
+          "type": "string",
+          "default": "",
+          "description": "Path to weekly note template relative to vault root. Falls back to Obsidian settings if empty."
+        },
+        "obsidianVault.templatesFolder": {
+          "type": "string",
+          "default": "_templates",
+          "description": "Folder containing templates relative to vault root."
+        },
+        "obsidianVault.autoCreateYearFolders": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically organize daily notes into year-based subfolders (e.g., attention/2026/)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
