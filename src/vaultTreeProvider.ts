@@ -45,7 +45,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                 dailyNotesPath,
                 vscode.TreeItemCollapsibleState.Collapsed,
                 'folder',
-                '$(calendar)'
+                'calendar'
             ));
         }
 
@@ -55,7 +55,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
             vaultPath,
             vscode.TreeItemCollapsibleState.Collapsed,
             'weekly-folder',
-            '$(calendar)'
+            'calendar'
         ));
 
         // Templates section
@@ -66,7 +66,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                 templatesPath,
                 vscode.TreeItemCollapsibleState.Collapsed,
                 'folder',
-                '$(file-code)'
+                'file-code'
             ));
         }
 
@@ -80,7 +80,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                     path.join(vaultPath, entry.name),
                     vscode.TreeItemCollapsibleState.Collapsed,
                     'folder',
-                    '$(folder)'
+                    'folder'
                 ));
             }
         }
@@ -93,7 +93,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                 path.join(vaultPath, file.name),
                 vscode.TreeItemCollapsibleState.None,
                 'file',
-                '$(file)'
+                'markdown'
             ));
         }
 
@@ -115,7 +115,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                         path.join(item.resourcePath, entry.name),
                         vscode.TreeItemCollapsibleState.None,
                         'file',
-                        '$(file)'
+                        'markdown'
                     ));
                 }
             }
@@ -137,7 +137,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                     path.join(item.resourcePath, entry.name),
                     vscode.TreeItemCollapsibleState.Collapsed,
                     'folder',
-                    '$(folder)'
+                    'folder'
                 ));
             }
         }
@@ -150,7 +150,7 @@ export class VaultTreeProvider implements vscode.TreeDataProvider<VaultItem> {
                     path.join(item.resourcePath, entry.name),
                     vscode.TreeItemCollapsibleState.None,
                     'file',
-                    '$(file)'
+                    'markdown'
                 ));
             }
         }
